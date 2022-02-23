@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<style>
+    .text{
+        border:1px solid black;
+        margin-left: 25%;
+        margin-top:5%;
+        border-radius:12px;
+        background-color: white;
+        box-shadow: 1px 1px rgba(47, 124, 240, 0.885);
+        margin-top: 5%; 
+    }
+    .text-feild h1{
+        font-size: 300%;
+        text-align: center;
+        margin-top: 5%;
+        font-weight: 600;
+    }
+    h5{
+        text-align: center;
+    }
+    
+    .button-submit,.button-register{
+        border: 1px solid blue;
+        background-color: blue;
+        color:white;
+        width:100%;
+        margin-top: 1%;
+        margin-bottom: 4%;
+    }
+    .full-form{
+        background-color: white;
+    }
+    label{
+        font-weight: 700;
+        font-size: 120%;
+    }
+    .form-info{
+        margin-left: 12%;
+    }
+
+    @media (max-width:1100px){
+        .text{
+            margin-top:10%;
+        }
+        .text-feild h1{
+        font-size: 200%;
+        margin-top: 6%;
+        font-weight: 600;
+        }
+        label{
+            font-weight: 700;
+            font-size: 100%;
+        }
+    }
+    @media (max-width:770px){
+        .text{
+            margin-top:15%;
+            margin-left: 20%;
+        }
+        .text-feild h1{
+        font-size: 170%;
+        margin-top: 8%;
+        font-weight: 600;
+        }
+        label{
+            font-weight: 700;
+            font-size: 100%;
+        }
+    }
+    @media (max-width:575px){
+        .text{
+            margin-top:15%;
+            margin-left: 11%;
+        }
+        .text-feild h1{
+        font-size: 160%;
+        margin-top: 8%;
+        font-weight: 600;
+        }
+        label{
+            font-weight: 700;
+            font-size: 80%;
+        }
+    }
+</style>
+<script type="text/javascript">
+    var user='{{request.user}}'
+  </script>
+</head>
+<body style="background-color: rgba(47, 124, 240, 0.885);">
+    <div class="row">
+        <div class="col-lg-5 col-md-6 col-sm-8 col-9 text">
+            <form method="post">
+                {% csrf_token %}
+                <div class="row text-feild">
+                    <h1>VERIFICATION PROCESS</h1>
+                </div>
+                <div style="margin-top: 3%;" class="row">
+                    <div style="margin-top: 5%; text-align: center;" class="col-lg-9 col-md-9 col-sm-9 col-9 form-info">
+                        <p><strong>OTP</strong> has been <strong>sent to your mail</strong></p>
+                        <input  style="margin-top: 3%;" name="otp" type="tel" class="form-control"   placeholder="f-">
+                        <button style="margin-top: 8%;" type="submit" class="button-register">Verify</button>
+                    </div>
+                </div>
+                  
+            </form>
+        </div>
+    </div>
+</body>
+</html>
